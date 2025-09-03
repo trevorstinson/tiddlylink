@@ -8,6 +8,18 @@ const LinkCleaner: FC<LinkCleanerProps> = () => {
   const [urlInput, setUrlInput] = React.useState('');
   const [urlOutput, setUrlOutput] = React.useState('');
 
+  React.useEffect(() => {
+    const dirty = urlInput;
+    const indexOfQuestionMark = dirty.indexOf('?');
+
+    if (indexOfQuestionMark === -1) {
+      setUrlOutput(dirty);
+    } else {
+      const cleaned = dirty.slice(0, indexOfQuestionMark);
+      setUrlOutput(cleaned);
+    }
+  }, [urlInput]);
+
   return (
     <div className={styles.LinkCleaner}>
       <TextInput
