@@ -23,13 +23,11 @@ const LinkCleaner: FC<LinkCleanerProps> = () => {
   return (
     <div className={styles.LinkCleaner}>
       <TextInput
-        id="url-input"
         label="Original Link"
         value={urlInput}
         setValue={setUrlInput}
       />
       <TextInput
-        id="url-output"
         label="Cleaned Link"
         value={urlOutput}
         setValue={setUrlOutput}
