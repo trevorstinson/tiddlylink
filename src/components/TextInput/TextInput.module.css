@@ -1,2 +1,13 @@
 .TextInput {
+  margin-top: 2rem;
+  width: 100%;
+
+  & label {
+    font-variant-caps: all-small-caps;
+  }
+
+  & input {
+    margin-top: 1rem;
+    width: 100%;
+  }
 }
