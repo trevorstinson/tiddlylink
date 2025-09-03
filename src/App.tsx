@@ -4,10 +4,9 @@ import LinkCleaner from './components/LinkCleaner/LinkCleaner';
 export function App() {
   return (
     <>
-      <h1>Parcel React App</h1>
-      <p>
-        Edit <code>src/App.tsx</code> to get started!
-      </p>
+      <h1>TidyLink</h1>
+      <p>Paste your link and a cleaned copy will be provided.</p>
+      <p>This does exactly one thing right now: remove all query parameters.</p>
       <LinkCleaner />
     </>
   );
