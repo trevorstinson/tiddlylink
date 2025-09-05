@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import LinkInputArea from '../LinkInputArea/LinkInputArea';
-import TextInput from '../TextInput/TextInput';
+import LinkOutputArea from '../LinkOutputArea/LinkOutputArea';
 import styles from './LinkCleaner.module.css';
 
 interface LinkCleanerProps {}
@@ -28,11 +28,10 @@ const LinkCleaner: FC<LinkCleanerProps> = () => {
         setUrlInput={setUrlInput}
       ></LinkInputArea>
 
-      <TextInput
-        label="Cleaned Link"
-        value={urlOutput}
-        setValue={setUrlOutput}
-      />
+      <LinkOutputArea
+        urlOutput={urlOutput}
+        setUrlOutput={setUrlOutput}
+      ></LinkOutputArea>
     </div>
   );
 };
