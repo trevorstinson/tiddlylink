@@ -10,13 +10,12 @@ const LinkCleaner: FC<LinkCleanerProps> = () => {
   const [urlOutput, setUrlOutput] = React.useState('');
 
   React.useEffect(() => {
-    const dirty = urlInput;
-    const indexOfQuestionMark = dirty.indexOf('?');
+    const indexOfQuestionMark = urlInput.indexOf('?');
 
     if (indexOfQuestionMark === -1) {
-      setUrlOutput(dirty);
+      setUrlOutput(urlInput);
     } else {
-      const cleaned = dirty.slice(0, indexOfQuestionMark);
+      const cleaned = urlInput.slice(0, indexOfQuestionMark);
       setUrlOutput(cleaned);
     }
   }, [urlInput]);
