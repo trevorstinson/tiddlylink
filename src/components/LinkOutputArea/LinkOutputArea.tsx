@@ -12,7 +12,7 @@ const LinkOutputArea: FC<LinkOutputAreaProps> = ({
   urlOutput,
   setUrlOutput,
 }) => {
-  const handleClick = async (): Promise<void> => {
+  const handleCopy = async (): Promise<void> => {
     await window.navigator.clipboard.writeText(urlOutput);
   };
 
@@ -23,7 +23,7 @@ const LinkOutputArea: FC<LinkOutputAreaProps> = ({
         value={urlOutput}
         setValue={setUrlOutput}
       />
-      <Button handleClick={handleClick}>Copy</Button>
+      <Button handleClick={handleCopy}>Copy</Button>
     </div>
   );
 };
