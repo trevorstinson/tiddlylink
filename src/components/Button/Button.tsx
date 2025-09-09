@@ -1,10 +1,15 @@
-import { FC } from 'react';
+import { FC, MouseEventHandler } from 'react';
 import styles from './Button.module.css';
 
-interface ButtonProps {}
+interface ButtonProps {
+  children: string;
+  handleClick: MouseEventHandler;
+}
 
-const Button: FC<ButtonProps> = () => (
-  <div className={styles.Button}>Button Component</div>
+const Button: FC<ButtonProps> = ({ children, handleClick }) => (
+  <button className={styles.Button} onClick={handleClick}>
+    {children}
+  </button>
 );
 
 export default Button;
