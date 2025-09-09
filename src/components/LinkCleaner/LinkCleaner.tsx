@@ -12,7 +12,9 @@ const LinkCleaner: FC<LinkCleanerProps> = () => {
   React.useEffect(() => {
     const indexOfQuestionMark = urlInput.indexOf('?');
 
-    if (indexOfQuestionMark === -1) {
+    if (urlInput.length === 0) {
+      return;
+    } else if (indexOfQuestionMark === -1) {
       setUrlOutput(urlInput);
     } else {
       const cleaned = urlInput.slice(0, indexOfQuestionMark);
@@ -30,6 +32,7 @@ const LinkCleaner: FC<LinkCleanerProps> = () => {
       <LinkOutputArea
         urlOutput={urlOutput}
         setUrlOutput={setUrlOutput}
+        setUrlInput={setUrlInput}
       ></LinkOutputArea>
     </div>
   );
