@@ -1,5 +1,13 @@
 @import url(index.css);
 
+/* Resets  */
+
+* {
+  box-sizing: border-box;
+}
+
+/* Styles */
+
 html {
   color-scheme: light dark;
   display: flex;
