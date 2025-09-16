@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import LinkHistoryItem from '../LinkHistoryItem/LinkHistoryItem';
 import styles from './LinkHistoryList.module.css';
 
 interface LinkHistoryListProps {
@@ -8,7 +9,7 @@ interface LinkHistoryListProps {
 const LinkHistoryList: FC<LinkHistoryListProps> = ({ historyList }) => (
   <div className={styles.LinkHistoryList}>
     {historyList.map(({ id, url }) => (
-      <pre key={id}>{url}</pre>
+      <LinkHistoryItem key={id}>{url}</LinkHistoryItem>
     ))}
   </div>
 );
