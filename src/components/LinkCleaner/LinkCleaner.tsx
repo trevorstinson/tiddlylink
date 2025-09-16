@@ -1,25 +1,39 @@
 import React, { FC } from 'react';
+import LinkHistoryList from '../LinkHistoryList/LinkHistoryList';
 import LinkInputArea from '../LinkInputArea/LinkInputArea';
-import LinkOutputArea from '../LinkOutputArea/LinkOutputArea';
 import styles from './LinkCleaner.module.css';
 
 interface LinkCleanerProps {}
 
 const LinkCleaner: FC<LinkCleanerProps> = () => {
   const [urlInput, setUrlInput] = React.useState('');
-  const [urlOutput, setUrlOutput] = React.useState('');
+  const [historyList, setHistoryList] = React.useState(
+    [] as { id: string; url: string }[]
+  );
+
+  const createHistoryItem = (input: string) => ({
+    id: crypto.randomUUID(),
+    url: input,
+  });
 
   React.useEffect(() => {
     const indexOfQuestionMark = urlInput.indexOf('?');
 
     if (urlInput.length === 0) {
       return;
-    } else if (indexOfQuestionMark === -1) {
-      setUrlOutput(urlInput);
+    }
+
+    let newItem;
+
+    if (indexOfQuestionMark === -1) {
+      newItem = createHistoryItem(urlInput);
     } else {
       const cleaned = urlInput.slice(0, indexOfQuestionMark);
-      setUrlOutput(cleaned);
+      newItem = createHistoryItem(cleaned);
     }
+
+    setHistoryList([...historyList, newItem]);
+    setUrlInput('');
   }, [urlInput]);
 
   return (
@@ -29,11 +43,7 @@ const LinkCleaner: FC<LinkCleanerProps> = () => {
         setUrlInput={setUrlInput}
       ></LinkInputArea>
 
-      <LinkOutputArea
-        urlOutput={urlOutput}
-        setUrlOutput={setUrlOutput}
-        setUrlInput={setUrlInput}
-      ></LinkOutputArea>
+      <LinkHistoryList historyList={historyList} />
     </div>
   );
 };
