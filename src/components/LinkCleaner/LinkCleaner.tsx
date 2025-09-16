@@ -32,7 +32,7 @@ const LinkCleaner: FC<LinkCleanerProps> = () => {
       newItem = createHistoryItem(cleaned);
     }
 
-    setHistoryList([...historyList, newItem]);
+    setHistoryList([newItem, ...historyList]);
     setUrlInput('');
   }, [urlInput]);
 
