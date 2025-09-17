@@ -1,2 +1,8 @@
 .LinkHistoryItem {
+  margin-top: 2rem;
+
+  pre {
+    background-color: var(--color-background--shaded);
+    padding: 1rem 1.25rem;
+  }
 }

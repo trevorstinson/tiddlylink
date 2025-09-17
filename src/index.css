@@ -2,12 +2,41 @@
 /*                Theme variables                */
 /* ********************************************* */
 
-/* Colors */
-
+/* Fonts */
 :root {
   --font-sans: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
     helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica,
     arial, sans-serif;
   --font-mono: Menlo, Consolas, Monaco, Adwaita Mono, Liberation Mono,
     Lucida Console, monospace;
+}
+
+/* Colors */
+:root {
+  /* Primary */
+  --color-primary--h: 49;
+  --color-primary--s: 94%;
+  --color-primary--l: 63%;
+
+  --color-primary: hsl(
+    var(--color-primary--h),
+    var(--color-primary--s),
+    var(--color-primary--l)
+  );
+
+  /* Accent */
+  --color-accent--h: calc(var(--color-primary--h) + 200);
+
+  --color-accent: hsl(from var(--color-primary) var(--color-accent--h) s l);
+
+  /* Background */
+  --color-background--l: 96%;
+
+  --color-background: hsl(
+    from var(--color-primary) h s var(--color-background--l)
+  );
+
+  --color-background--shaded: hsl(
+    from var(--color-background) h s calc(var(--color-background--l) - 10%)
+  );
 }

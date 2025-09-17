@@ -9,6 +9,7 @@
 /* Styles */
 
 html {
+  background-color: var(--color-background);
   color-scheme: light dark;
   display: flex;
   font-family: var(--font-sans);
