@@ -12,11 +12,12 @@
     border: 1px var(--color-primary) solid;
     caret-color: var(--color-accent);
     font-family: var(--font-mono);
-    margin-top: 1rem;
-    padding: 0.5rem 1.25rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
     width: 100%;
 
     &:focus {
+      border-color: transparent;
       outline: 2px var(--color-accent) solid;
     }
   }

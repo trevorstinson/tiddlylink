@@ -39,6 +39,7 @@
   --color-background--shaded: hsl(
     from var(--color-background) h s calc(var(--color-background--l) - 10%)
   );
+  --color-background--unshaded: white;
 }
 
 /* Dark Mode Colors */
