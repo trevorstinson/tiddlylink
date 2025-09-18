@@ -11,6 +11,7 @@
 html {
   background-color: var(--color-background);
   color-scheme: light dark;
+  color: var(--color-primary--black);
   display: flex;
   font-family: var(--font-sans);
   height: 100%;

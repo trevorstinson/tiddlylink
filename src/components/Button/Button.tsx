@@ -2,7 +2,7 @@ import { FC, MouseEventHandler } from 'react';
 import styles from './Button.module.css';
 
 interface ButtonProps {
-  children: string;
+  children: React.ReactNode;
   handleClick: MouseEventHandler;
 }
 

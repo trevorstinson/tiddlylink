@@ -1,2 +1,5 @@
 .Button {
+  &:focus {
+    outline: var(--focus-outline);
+  }
 }

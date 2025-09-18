@@ -1,8 +1,38 @@
 .LinkHistoryItem {
+  align-items: center;
+  background-color: var(--color-background--shaded);
+  display: flex;
+  justify-content: space-between;
   margin-top: 2rem;
+  max-width: 37.5rem;
 
   pre {
-    background-color: var(--color-background--shaded);
-    padding: 1rem 1.25rem;
+    font-family: var(--font-mono);
+    overflow-x: auto;
+    padding: 0 1.25rem;
+  }
+
+  button {
+    background: transparent;
+    border-radius: 0.25rem;
+    border: none;
+    color: var(--color-accent);
+    margin-right: 0.5rem;
+    padding: 0.25rem 0.25rem 0;
+
+    &:hover,
+    &:active {
+      background-color: var(--color-accent);
+      color: var(--color-background--unshaded);
+    }
+
+    &:hover {
+      outline: var(--focus-outline);
+    }
+
+    &:active {
+      margin-top: 2px;
+      outline: none;
+    }
   }
 }
