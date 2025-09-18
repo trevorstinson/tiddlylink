@@ -40,3 +40,41 @@
     from var(--color-background) h s calc(var(--color-background--l) - 10%)
   );
 }
+
+/* Dark Mode Colors */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Primary */
+    --color-primary--h: 49;
+    --color-primary--s: 94%;
+    --color-primary--l: 33%;
+
+    --color-primary: hsl(
+      var(--color-primary--h),
+      var(--color-primary--s),
+      var(--color-primary--l)
+    );
+
+    /* Accent */
+    --color-accent--h: calc(var(--color-primary--h) + 200);
+    --color-accent--l: calc(var(--color-primary--l) + 32%);
+
+    --color-accent: hsl(
+      from var(--color-primary) var(--color-accent--h) s var(--color-accent--l)
+    );
+
+    /* Background */
+    --color-background--l: 5%;
+
+    --color-background: hsl(
+      from var(--color-primary) h s var(--color-background--l)
+    );
+
+    --color-background--shaded: hsl(
+      from var(--color-background) h s calc(var(--color-background--l) + 5%)
+    );
+    --color-background--unshaded: hsl(
+      from var(--color-background) h s calc(var(--color-background--l) + 2%)
+    );
+  }
+}
