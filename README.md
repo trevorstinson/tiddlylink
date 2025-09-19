@@ -1,4 +1,4 @@
-## tiddlylink
+## Tiddlylink
 
 A simple tool for removing tracking parameters from URLs.
 
