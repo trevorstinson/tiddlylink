@@ -8,8 +8,9 @@
 
   pre {
     font-family: var(--font-mono);
-    overflow-x: auto;
     padding: 0 1.25rem;
+    white-space: pre-wrap;
+    word-break: break-all;
   }
 
   button {
