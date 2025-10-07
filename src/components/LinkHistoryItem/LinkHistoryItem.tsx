@@ -4,17 +4,23 @@ import Button from '../Button/Button';
 import styles from './LinkHistoryItem.module.css';
 
 interface LinkHistoryItemProps {
-  children: string;
+  originalUrl: string;
+  cleanUrl: string | null;
 }
 
-const LinkHistoryItem: FC<LinkHistoryItemProps> = ({ children }) => {
+const LinkHistoryItem: FC<LinkHistoryItemProps> = ({
+  originalUrl,
+  cleanUrl,
+}) => {
   const [copyClicked, setCopyClicked] = React.useState(false);
   const [switchClicked, setSwitchClicked] = React.useState(false);
+
+  const displayedValue = !switchClicked && !!cleanUrl ? cleanUrl : originalUrl;
 
   const handleCopy = async (): Promise<void> => {
     setCopyClicked(true);
 
-    await window.navigator.clipboard.writeText(children);
+    await window.navigator.clipboard.writeText(displayedValue);
 
     window.setTimeout(() => {
       setCopyClicked(false);
@@ -27,7 +33,7 @@ const LinkHistoryItem: FC<LinkHistoryItemProps> = ({ children }) => {
 
   return (
     <div className={styles.LinkHistoryItem}>
-      <pre>{children}</pre>
+      <pre>{displayedValue}</pre>
       <div>
         <Button handleClick={handleSwitch}>
           {!switchClicked ? <RotateCcwSquare /> : <RotateCwSquare />}

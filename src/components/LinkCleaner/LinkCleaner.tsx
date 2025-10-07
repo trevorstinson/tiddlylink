@@ -8,29 +8,26 @@ interface LinkCleanerProps {}
 const LinkCleaner: FC<LinkCleanerProps> = () => {
   const [urlInput, setUrlInput] = React.useState('');
   const [historyList, setHistoryList] = React.useState(
-    [] as { id: string; cleanUrl: string }[]
+    [] as { id: string; originalUrl: string; cleanUrl: string | null }[]
   );
 
-  const createHistoryItem = (input: string) => ({
-    id: crypto.randomUUID(),
-    cleanUrl: input,
-  });
+  const createHistoryItem = (input: string) => {
+    const indexOfQuestionMark = input.indexOf('?');
+
+    return {
+      id: crypto.randomUUID(),
+      originalUrl: input,
+      cleanUrl:
+        indexOfQuestionMark === -1 ? null : input.slice(0, indexOfQuestionMark),
+    };
+  };
 
   React.useEffect(() => {
-    const indexOfQuestionMark = urlInput.indexOf('?');
-
     if (urlInput.length === 0) {
       return;
     }
 
-    let newItem;
-
-    if (indexOfQuestionMark === -1) {
-      newItem = createHistoryItem(urlInput);
-    } else {
-      const cleaned = urlInput.slice(0, indexOfQuestionMark);
-      newItem = createHistoryItem(cleaned);
-    }
+    const newItem = createHistoryItem(urlInput);
 
     setHistoryList([newItem, ...historyList]);
     setUrlInput('');
