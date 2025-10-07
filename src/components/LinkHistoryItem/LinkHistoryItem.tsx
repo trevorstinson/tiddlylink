@@ -1,4 +1,4 @@
-import { Copy, CopyCheck } from 'lucide-react';
+import { Copy, CopyCheck, RotateCcwSquare, RotateCwSquare } from 'lucide-react';
 import React, { FC } from 'react';
 import Button from '../Button/Button';
 import styles from './LinkHistoryItem.module.css';
@@ -9,6 +9,7 @@ interface LinkHistoryItemProps {
 
 const LinkHistoryItem: FC<LinkHistoryItemProps> = ({ children }) => {
   const [copyClicked, setCopyClicked] = React.useState(false);
+  const [switchClicked, setSwitchClicked] = React.useState(false);
 
   const handleCopy = async (): Promise<void> => {
     setCopyClicked(true);
@@ -20,12 +21,21 @@ const LinkHistoryItem: FC<LinkHistoryItemProps> = ({ children }) => {
     }, 1500);
   };
 
+  const handleSwitch = (): void => {
+    setSwitchClicked(!switchClicked);
+  };
+
   return (
     <div className={styles.LinkHistoryItem}>
       <pre>{children}</pre>
-      <Button handleClick={handleCopy}>
-        {!copyClicked ? <Copy size={24} /> : <CopyCheck size={24} />}
-      </Button>
+      <div>
+        <Button handleClick={handleSwitch}>
+          {!switchClicked ? <RotateCcwSquare /> : <RotateCwSquare />}
+        </Button>
+        <Button handleClick={handleCopy}>
+          {!copyClicked ? <Copy size={24} /> : <CopyCheck size={24} />}
+        </Button>
+      </div>
     </div>
   );
 };
