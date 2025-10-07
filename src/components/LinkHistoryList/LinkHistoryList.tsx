@@ -3,13 +3,13 @@ import LinkHistoryItem from '../LinkHistoryItem/LinkHistoryItem';
 import styles from './LinkHistoryList.module.css';
 
 interface LinkHistoryListProps {
-  historyList: { id: string; url: string }[];
+  historyList: { id: string; cleanUrl: string }[];
 }
 
 const LinkHistoryList: FC<LinkHistoryListProps> = ({ historyList }) => (
   <div className={styles.LinkHistoryList}>
-    {historyList.map(({ id, url }) => (
-      <LinkHistoryItem key={id}>{url}</LinkHistoryItem>
+    {historyList.map(({ id, cleanUrl: cleanUrl }) => (
+      <LinkHistoryItem key={id}>{cleanUrl}</LinkHistoryItem>
     ))}
   </div>
 );
