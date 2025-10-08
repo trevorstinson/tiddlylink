@@ -3,7 +3,8 @@ import React, { FC } from 'react';
 import Button from '../Button/Button';
 import styles from './LinkHistoryItem.module.css';
 
-interface LinkHistoryItemProps {
+export interface LinkHistoryItemProps {
+  id?: string;
   originalUrl: string;
   cleanUrl: string | null;
 }

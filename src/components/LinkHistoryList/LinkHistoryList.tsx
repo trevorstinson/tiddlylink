@@ -1,9 +1,11 @@
 import { FC } from 'react';
-import LinkHistoryItem from '../LinkHistoryItem/LinkHistoryItem';
+import LinkHistoryItem, {
+  LinkHistoryItemProps,
+} from '../LinkHistoryItem/LinkHistoryItem';
 import styles from './LinkHistoryList.module.css';
 
 interface LinkHistoryListProps {
-  historyList: { id: string; originalUrl: string; cleanUrl: string | null }[];
+  historyList: LinkHistoryItemProps[];
 }
 
 const LinkHistoryList: FC<LinkHistoryListProps> = ({ historyList }) => (

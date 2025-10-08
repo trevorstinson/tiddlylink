@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { LinkHistoryItemProps } from '../LinkHistoryItem/LinkHistoryItem';
 import LinkHistoryList from '../LinkHistoryList/LinkHistoryList';
 import LinkInputArea from '../LinkInputArea/LinkInputArea';
 import styles from './LinkCleaner.module.css';
@@ -8,10 +9,10 @@ interface LinkCleanerProps {}
 const LinkCleaner: FC<LinkCleanerProps> = () => {
   const [urlInput, setUrlInput] = React.useState('');
   const [historyList, setHistoryList] = React.useState(
-    [] as { id: string; originalUrl: string; cleanUrl: string | null }[]
+    [] as LinkHistoryItemProps[]
   );
 
-  const createHistoryItem = (input: string) => {
+  const createHistoryItem = (input: string): LinkHistoryItemProps => {
     const indexOfQuestionMark = input.indexOf('?');
 
     return {
