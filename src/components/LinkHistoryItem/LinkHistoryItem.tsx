@@ -35,7 +35,7 @@ const LinkHistoryItem: FC<LinkHistoryItemProps> = ({
   return (
     <div className={styles.LinkHistoryItem}>
       <pre>{displayedValue}</pre>
-      <div>
+      <div className={styles.buttonWrapper}>
         <Button handleClick={handleSwitch}>
           {!switchClicked ? <RotateCcwSquare /> : <RotateCwSquare />}
         </Button>
