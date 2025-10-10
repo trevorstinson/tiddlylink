@@ -11,7 +11,7 @@ const LinkInputArea: FC<LinkInputAreaProps> = ({ urlInput, setUrlInput }) => (
   <div className={styles.LinkInputArea}>
     <TextInput
       label="Your Link"
-      placeholder="https://example.com/stuff?and=things"
+      placeholder="https://example.com/stuff/"
       value={urlInput}
       setValue={setUrlInput}
     />
