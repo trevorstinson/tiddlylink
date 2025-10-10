@@ -17,6 +17,10 @@ const LinkHistoryItem: FC<LinkHistoryItemProps> = ({
   const [switchClicked, setSwitchClicked] = React.useState(false);
 
   const displayedValue = !switchClicked && !!cleanUrl ? cleanUrl : originalUrl;
+  const switchTitle =
+    displayedValue === cleanUrl
+      ? 'Switch to original link'
+      : 'Switch to clean link';
 
   const handleCopy = async (): Promise<void> => {
     setCopyClicked(true);
@@ -36,10 +40,10 @@ const LinkHistoryItem: FC<LinkHistoryItemProps> = ({
     <div className={styles.LinkHistoryItem}>
       <pre>{displayedValue}</pre>
       <div className={styles.buttonWrapper}>
-        <Button handleClick={handleSwitch}>
+        <Button handleClick={handleSwitch} title={switchTitle}>
           {!switchClicked ? <RotateCcwSquare /> : <RotateCwSquare />}
         </Button>
-        <Button handleClick={handleCopy}>
+        <Button handleClick={handleCopy} title="Copy link">
           {!copyClicked ? <Copy size={24} /> : <CopyCheck size={24} />}
         </Button>
       </div>
