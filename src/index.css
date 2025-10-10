@@ -85,4 +85,5 @@
 /* Other Variables */
 :root {
   --focus-outline: 2px var(--color-accent) solid;
+  --focus-outline--active: 1px var(--color-accent) solid;
 }

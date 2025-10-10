@@ -38,8 +38,7 @@
     }
 
     &:active {
-      margin-top: 2px;
-      outline: none;
+      outline: var(--focus-outline--active);
     }
   }
 }
