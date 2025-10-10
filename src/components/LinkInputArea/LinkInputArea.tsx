@@ -9,7 +9,12 @@ interface LinkInputAreaProps {
 
 const LinkInputArea: FC<LinkInputAreaProps> = ({ urlInput, setUrlInput }) => (
   <div className={styles.LinkInputArea}>
-    <TextInput label="Original Link" value={urlInput} setValue={setUrlInput} />
+    <TextInput
+      label="Your Link"
+      placeholder="https://example.com/stuff?and=things"
+      value={urlInput}
+      setValue={setUrlInput}
+    />
   </div>
 );
 
