@@ -16,6 +16,7 @@
   .buttonWrapper {
     min-width: 5rem;
     padding-top: 0.6rem;
+    text-align: right;
   }
 
   button {

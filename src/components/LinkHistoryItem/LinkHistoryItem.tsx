@@ -40,9 +40,11 @@ const LinkHistoryItem: FC<LinkHistoryItemProps> = ({
     <div className={styles.LinkHistoryItem}>
       <pre>{displayedValue}</pre>
       <div className={styles.buttonWrapper}>
-        <Button handleClick={handleSwitch} title={switchTitle}>
-          {!switchClicked ? <RotateCcwSquare /> : <RotateCwSquare />}
-        </Button>
+        {cleanUrl && (
+          <Button handleClick={handleSwitch} title={switchTitle}>
+            {!switchClicked ? <RotateCcwSquare /> : <RotateCwSquare />}
+          </Button>
+        )}
         <Button handleClick={handleCopy} title="Copy link">
           {!copyClicked ? <Copy size={24} /> : <CopyCheck size={24} />}
         </Button>
