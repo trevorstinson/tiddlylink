@@ -1,4 +1,4 @@
-import React, { Dispatch, FC, SetStateAction } from 'react';
+import React, { Dispatch, FC, RefObject, SetStateAction } from 'react';
 import styles from './TextInput.module.css';
 
 interface TextInputProps {
@@ -6,6 +6,7 @@ interface TextInputProps {
   placeholder: string;
   value: string;
   setValue: Dispatch<SetStateAction<string>>;
+  inputRef?: RefObject<HTMLInputElement | null>;
 }
 
 const TextInput: FC<TextInputProps> = ({
@@ -13,6 +14,7 @@ const TextInput: FC<TextInputProps> = ({
   placeholder,
   value,
   setValue,
+  inputRef,
 }) => {
   const id = React.useId();
   const wrapperId = `${id}-input-wrapper`;
@@ -22,6 +24,7 @@ const TextInput: FC<TextInputProps> = ({
     <div id={wrapperId} className={styles.TextInput}>
       <label htmlFor={inputId}>{label}:</label>
       <input
+        ref={inputRef}
         id={inputId}
         placeholder={placeholder}
         value={value}
