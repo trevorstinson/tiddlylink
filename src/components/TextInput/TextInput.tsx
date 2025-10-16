@@ -16,9 +16,7 @@ const TextInput: FC<TextInputProps> = ({
   setValue,
   inputRef,
 }) => {
-  const id = React.useId();
-  const wrapperId = `${id}-input-wrapper`;
-  const inputId = `${id}-input`;
+  const inputId = React.useId();
 
   return (
     <>
