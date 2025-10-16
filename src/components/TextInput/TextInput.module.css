@@ -1,25 +1,22 @@
-.TextInput {
-  margin-top: 2rem;
+.label {
+  display: inline-block;
+  font-variant-caps: all-small-caps;
+  margin-top: 1rem;
+}
+
+.input {
+  background-color: var(--color-background--unshaded);
+  border-radius: 0.25rem;
+  border: 1px var(--color-primary) solid;
+  caret-color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
   width: 100%;
 
-  & label {
-    font-variant-caps: all-small-caps;
-  }
-
-  & input {
-    background-color: var(--color-background--unshaded);
-    border-radius: 0.25rem;
-    border: 1px var(--color-primary) solid;
-    caret-color: var(--color-accent);
-    font-family: var(--font-mono);
-    font-size: 1rem;
-    margin-top: 0.5rem;
-    padding: 0.5rem;
-    width: 100%;
-
-    &:focus {
-      border-color: transparent;
-      outline: var(--focus-outline);
-    }
+  &:focus {
+    border-color: transparent;
+    outline: var(--focus-outline);
   }
 }

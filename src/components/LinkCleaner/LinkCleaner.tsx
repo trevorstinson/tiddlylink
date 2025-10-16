@@ -2,7 +2,6 @@ import React, { FC } from 'react';
 import { LinkHistoryItemProps } from '../LinkHistoryItem/LinkHistoryItem';
 import LinkHistoryList from '../LinkHistoryList/LinkHistoryList';
 import LinkInputArea from '../LinkInputArea/LinkInputArea';
-import styles from './LinkCleaner.module.css';
 
 interface LinkCleanerProps {}
 
@@ -35,14 +34,14 @@ const LinkCleaner: FC<LinkCleanerProps> = () => {
   }, [urlInput]);
 
   return (
-    <div className={styles.LinkCleaner}>
+    <>
       <LinkInputArea
         urlInput={urlInput}
         setUrlInput={setUrlInput}
       ></LinkInputArea>
 
       <LinkHistoryList historyList={historyList} />
-    </div>
+    </>
   );
 };
 

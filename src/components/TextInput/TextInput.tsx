@@ -21,9 +21,12 @@ const TextInput: FC<TextInputProps> = ({
   const inputId = `${id}-input`;
 
   return (
-    <div id={wrapperId} className={styles.TextInput}>
-      <label htmlFor={inputId}>{label}:</label>
+    <>
+      <label htmlFor={inputId} className={styles.label}>
+        {label}:
+      </label>
       <input
+        className={styles.input}
         ref={inputRef}
         id={inputId}
         placeholder={placeholder}
@@ -32,7 +35,7 @@ const TextInput: FC<TextInputProps> = ({
           setValue(event.target.value);
         }}
       />
-    </div>
+    </>
   );
 };
 
