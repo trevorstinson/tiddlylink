@@ -38,7 +38,11 @@ const LinkHistoryItem: FC<LinkHistoryItemProps> = ({
 
   return (
     <div className={styles.LinkHistoryItem}>
-      <pre>{displayedValue}</pre>
+      <pre>
+        <a href={displayedValue} target="_blank">
+          {displayedValue}
+        </a>
+      </pre>
       <div className={styles.buttonWrapper}>
         {cleanUrl && (
           <Button handleClick={handleSwitch} title={switchTitle}>
