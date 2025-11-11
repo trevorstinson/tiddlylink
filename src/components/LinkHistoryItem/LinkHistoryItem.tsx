@@ -39,7 +39,7 @@ const LinkHistoryItem: FC<LinkHistoryItemProps> = ({
   return (
     <div className={styles.LinkHistoryItem}>
       <pre>
-        <a href={displayedValue} target="_blank">
+        <a className={styles.link} href={displayedValue} target="_blank">
           {displayedValue}
         </a>
       </pre>

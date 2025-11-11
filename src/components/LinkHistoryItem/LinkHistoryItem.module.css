@@ -11,6 +11,14 @@
     padding: 0 1.25rem;
     white-space: pre-wrap;
     word-break: break-all;
+
+    & a.link {
+      color: var(--color-text);
+
+      &:hover {
+        text-decoration-thickness: 1.5px;
+      }
+    }
   }
 
   .buttonWrapper {
